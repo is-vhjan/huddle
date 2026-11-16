@@ -1,4 +1,4 @@
-FROM node:24.22.2-alpine3.24 AS builder
+FROM node:24.22.3-alpine3.24@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 AS builder
 WORKDIR /app
 RUN apk add --no-cache python3 make g++
 
@@ -20,7 +20,7 @@ RUN npm run build
 RUN npm prune --omit=dev
 
 
-FROM node:24.22.2-alpine3.24 AS runtime
+FROM node:24.22.3-alpine3.24@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 AS runtime
 WORKDIR /app
 # The npm bundled in the node image ships vulnerable copies of undici and
 # brace-expansion (they live inside npm itself, so no package.json override can reach
