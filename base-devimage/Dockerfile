@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base:debian
+FROM mcr.microsoft.com/devcontainers/base:debian@sha256:38f9e6c291f054e3c868d95a5477cbfcf76c0fa7c218dda65dc6aa3fbfe06871
 
 # mcr base levert al: vscode user (uid 1000) — passwordless sudo wordt hieronder verwijderd,
 # zsh + oh-my-zsh, git, curl, wget, common-utils.
