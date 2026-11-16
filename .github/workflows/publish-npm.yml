@@ -38,7 +38,7 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           persist-credentials: false
           # GitVersion heeft de volledige historie én tags (het anker) nodig.
@@ -54,7 +54,7 @@ jobs:
         id: gitversion
         uses: gittools/actions/gitversion/execute@51d325634925d7d9ce0a7efc2c586c0bc2b9eee6 # v3.2.1
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           # Node 24 levert npm >= 11.5.1, vereist voor trusted publishing
           # (npm 10.x faalt met een misleidende 404).
@@ -89,7 +89,7 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           persist-credentials: false
 
@@ -109,7 +109,7 @@ jobs:
           echo "tag=experiment-$ISSUE" >> "$GITHUB_OUTPUT"
           echo "Experiment-tag: experiment-$ISSUE"
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           # Node 24 levert npm >= 11.5.1, vereist voor trusted publishing
           # (npm 10.x faalt met een misleidende 404).
@@ -153,13 +153,13 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
           # Head-SHA van de (fork-)PR; staat in de object-store van de basis-repo.
           ref: ${{ inputs.ref }}
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           # Node 24 levert npm >= 11.5.1, vereist voor trusted publishing
           # (npm 10.x faalt met een misleidende 404).
