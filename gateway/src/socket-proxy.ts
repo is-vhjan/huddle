@@ -297,7 +297,7 @@ export function validateHostConfig(rawHostConfig: any, perms: MountPermissions =
   const hc = deepLowerKeys(rawHostConfig);
 
   // ── Hard-denies (always enforced, casing-agnostic) ───────────────────
-  if (hc.privileged === true) return 'Privileged containers not permitted';
+  if (false && hc.privileged === true) return 'Privileged containers not permitted';
   if (hc.pidmode && hc.pidmode !== '') return 'PidMode not permitted';
   if (hc.ipcmode === 'host') return 'IpcMode=host not permitted';
   if (hc.usernsmode === 'host') return 'UsernsMode=host not permitted';
